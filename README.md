@@ -29,5 +29,8 @@
 ### Executando o Projeto:
 
 ##### Após inicializar o Appium com um device configurado ( físico ou emulador ) clone o projeto para a sua maquina, importe o mesmo para a IDE Eclipse ou alguma outra de preferência. 
-##### Abra o pacote _Core, em seguida a classe: suite.java, clique com o botão direito do mouse, em seguida: Run As, JUnit Test 
+##### Abra o pacote _Core, em seguida a classe: suite.java, clique com o botão direito do mouse, em seguida: Run As, JUnit Test.
+
+### Vídeo do projeto em execução:
+ * [Video do projeto em execução](https://www.loom.com/share/883cc50c922246fe9c50ab101d47b44a) :movie_camera:
 
