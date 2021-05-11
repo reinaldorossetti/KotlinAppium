@@ -3,12 +3,12 @@ package login;
 import org.junit.Assert;
 import org.junit.Test;
 
-import _Core.constantes;
+import _core.Constantes;
 
 
-public class loginInvalido implements constantes {
+public class LoginInvalido implements Constantes {
 	
-	screenLogin step = new screenLogin();
+	ScreenLogin step = new ScreenLogin();
 	
 	@Test
 	public void loginUsuarioSenhaInvalidos () {

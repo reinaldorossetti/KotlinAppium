@@ -2,11 +2,11 @@ package login;
 
 import org.junit.Test;
 
-import _Core.constantes;
+import _core.Constantes;
 
-public class login implements constantes {
+public class Login implements Constantes {
 	
-	screenLogin step = new screenLogin();
+	ScreenLogin step = new ScreenLogin();
 	
 	@Test
 	public void testeLogin () {

@@ -1,13 +1,13 @@
 package login;
 
-import _Core.baseScreen;
+import _core.BaseScreen;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 
-public class screenLogin extends baseScreen {
+public class ScreenLogin extends BaseScreen {
 
-	public screenLogin() {
+	public ScreenLogin() {
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}

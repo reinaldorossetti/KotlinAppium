@@ -1,14 +1,14 @@
 package cadastrarUsuario;
 
-import _Core.baseScreen;
+import _core.BaseScreen;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 
 
-public class screenCadastrarUsuario extends baseScreen {
+public class ScreenCadastrarUsuario extends BaseScreen {
 
-	public screenCadastrarUsuario() {
+	public ScreenCadastrarUsuario() {
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}

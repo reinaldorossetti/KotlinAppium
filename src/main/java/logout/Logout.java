@@ -2,11 +2,11 @@ package logout;
 
 import org.junit.Test;
 
-import _Core.constantes;
+import _core.Constantes;
 
-public class logout implements constantes {
+public class Logout implements Constantes {
 	
-	screenLogout step = new screenLogout();
+	ScreenLogout step = new ScreenLogout();
 	
 	@Test
 	public void testLogout () {

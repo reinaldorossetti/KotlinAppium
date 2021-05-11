@@ -1,4 +1,4 @@
-package _Core;
+package _core;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -12,7 +12,7 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.remote.MobileCapabilityType;
 
-public class capabilities implements constantes {
+public class Capabilities implements Constantes {
 	
 	public static AppiumDriver<MobileElement> driver = inicializarDriverFactoryMobile();
 
@@ -49,7 +49,7 @@ public class capabilities implements constantes {
 		}
 	}
 	
-	public capabilities (AppiumDriver<MobileElement> driver) {
+	public Capabilities (AppiumDriver<MobileElement> driver) {
 		
 		PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(20)), this);
 		

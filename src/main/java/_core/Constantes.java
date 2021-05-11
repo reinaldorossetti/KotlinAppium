@@ -1,6 +1,6 @@
-package _Core;
+package _core;
 
-public interface constantes {
+public interface Constantes {
 	
 	//Capabilities Android
 	String platformName_value = "Android";

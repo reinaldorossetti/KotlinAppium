@@ -1,14 +1,14 @@
 package logout;
 
-import _Core.baseScreen;
+import _core.BaseScreen;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 
 
-public class screenLogout extends baseScreen {
+public class ScreenLogout extends BaseScreen {
 
-	public screenLogout() {
+	public ScreenLogout() {
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}

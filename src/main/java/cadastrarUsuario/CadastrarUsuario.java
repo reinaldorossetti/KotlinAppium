@@ -2,11 +2,11 @@ package cadastrarUsuario;
 
 import org.junit.Test;
 
-import _Core.constantes;
+import _core.Constantes;
 
-public class cadastrarUsuario implements constantes {
+public class CadastrarUsuario implements Constantes {
 
-	screenCadastrarUsuario step = new screenCadastrarUsuario();
+	ScreenCadastrarUsuario step = new ScreenCadastrarUsuario();
 	
 	@Test
 	public void testeCadastrarUsuario () {

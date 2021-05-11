@@ -3,11 +3,11 @@ package compras;
 import org.junit.Assert;
 import org.junit.Test;
 
-import _Core.constantes;
+import _core.Constantes;
 
-public class comprarProduto implements constantes {
+public class ComprarProduto implements Constantes {
 	
-	screenCompras step = new screenCompras();
+	ScreenCompras step = new ScreenCompras();
 	
 	@Test
 	public void testComprarProduto () {

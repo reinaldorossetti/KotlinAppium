@@ -3,15 +3,15 @@ package compras;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import _Core.baseScreen;
+import _core.BaseScreen;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 
-public class screenCompras extends baseScreen {
+public class ScreenCompras extends BaseScreen {
 
-	public screenCompras() {
+	public ScreenCompras() {
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}
