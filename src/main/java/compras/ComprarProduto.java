@@ -14,9 +14,9 @@ public class ComprarProduto implements Constantes {
 		
 		step.produto(bolaFutebol);
 		step.comprar();
-		step.numeroCartao(numeroCartao);
-		step.dataValidade(dataValidade);
-		step.cvc(cvc);	
+		step.preencherNumeroCartao(numeroCartao);
+		step.preencherDataValidade(dataValidade);
+		step.preencherCvc(cvc);	
 		step.confirmarPagamento();
 		
 		//"Falso Negativo" ou "Falso Negativo" ???

@@ -11,8 +11,8 @@ public class Login implements Constantes {
 	@Test
 	public void testeLogin () {
 		
-		step.idDoUsuario(idDoUsuario);
-		step.senha(senha);
+		step.preencherIdDoUsuario(idDoUsuario);
+		step.preencherSenha(senha);
 		step.logar();
 	}
 

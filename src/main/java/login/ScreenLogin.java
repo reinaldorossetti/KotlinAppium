@@ -29,12 +29,12 @@ public class ScreenLogin extends BaseScreen {
 	private MobileElement usuarioSenhaInvalidos;
 	
 	
-	public void idDoUsuario (String text) {
+	public void preencherIdDoUsuario (String text) {
 		
 		sendKeys(idDoUsuario, text);
 	}
 	
-	public void senha (String text) {
+	public void preencherSenha (String text) {
 		
 		sendKeys(senha, text);
 	}

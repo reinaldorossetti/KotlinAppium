@@ -49,17 +49,17 @@ public class ScreenCompras extends BaseScreen {
 		click(comprar);
 	}
 	
-	public void numeroCartao (String text) {
+	public void preencherNumeroCartao (String text) {
 		
 		sendKeys(numeroCartao, text);		
 	}
 	
-	public void dataValidade (String text) {
+	public void preencherDataValidade (String text) {
 		
 		sendKeys(dataValidade, text);		
 	}
 	
-	public void cvc (String text) {
+	public void preencherCvc (String text) {
 		
 		sendKeys(cvc, text);		
 	}

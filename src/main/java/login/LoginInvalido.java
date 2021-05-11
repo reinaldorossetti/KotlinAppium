@@ -13,8 +13,8 @@ public class LoginInvalido implements Constantes {
 	@Test
 	public void loginUsuarioSenhaInvalidos () {
 		
-		step.idDoUsuario("usuarioInexistente");
-		step.senha("9999999");
+		step.preencherIdDoUsuario("usuarioInexistente");
+		step.preencherSenha("9999999");
 		step.logar();
 		
 		Assert.assertEquals("Usuário ou senha inválidos", step.validaUsuarioSenhaInvalidos());
