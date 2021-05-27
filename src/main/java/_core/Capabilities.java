@@ -14,9 +14,17 @@ import io.appium.java_client.remote.MobileCapabilityType;
 
 public class Capabilities implements Constantes {
 	
-	public static AppiumDriver<MobileElement> driver = inicializarDriverFactoryMobile();
+	private static AppiumDriver<MobileElement> driver;
 
-	public static void createDriver() {
+	public static AppiumDriver<MobileElement> inicializarAppiumDriver() {
+
+		if (driver == null) {
+			createDriver();
+		}
+		return driver;
+	}
+	
+	private static void createDriver() {
 
 		DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
 		desiredCapabilities.setCapability("platformName", platformName_value);
@@ -32,14 +40,6 @@ public class Capabilities implements Constantes {
 			e.printStackTrace();
 		}
 	}
-	
-	public static AppiumDriver<MobileElement> inicializarDriverFactoryMobile() {
-
-		if (driver == null) {
-			createDriver();
-		}
-		return driver;
-	}
 
 	public static void finalizarAppiumDrivery() {
 
@@ -49,9 +49,4 @@ public class Capabilities implements Constantes {
 		}
 	}
 	
-	public Capabilities (AppiumDriver<MobileElement> driver) {
-		
-		PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(20)), this);
-		
-	}
 }

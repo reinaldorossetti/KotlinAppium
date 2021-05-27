@@ -1,4 +1,4 @@
-package login;
+package screens;
 
 import _core.BaseScreen;
 import io.appium.java_client.MobileElement;
@@ -6,11 +6,6 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 
 public class ScreenLogin extends BaseScreen {
-
-	public ScreenLogin() {
-		super(driver);
-		// TODO Auto-generated constructor stub
-	}
 	
 	@iOSXCUITFindBy(id = "")
 	@AndroidFindBy(id = "br.com.alura.aluraesporte:id/input_usuario")
@@ -27,7 +22,6 @@ public class ScreenLogin extends BaseScreen {
 	@iOSXCUITFindBy(id = "")
 	@AndroidFindBy(id = "br.com.alura.aluraesporte:id/mensagem_erro_login")
 	private MobileElement usuarioSenhaInvalidos;
-	
 	
 	public void preencherIdDoUsuario (String text) {
 		
@@ -47,8 +41,6 @@ public class ScreenLogin extends BaseScreen {
 	public String validaUsuarioSenhaInvalidos () {
 		
 		return usuarioSenhaInvalidos.getText();
-		
 	}
 	
-
 }

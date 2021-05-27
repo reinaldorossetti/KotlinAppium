@@ -1,9 +1,10 @@
-package compras;
+package screens;
 
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import _core.BaseScreen;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
@@ -11,10 +12,7 @@ import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 
 public class ScreenCompras extends BaseScreen {
 
-	public ScreenCompras() {
-		super(driver);
-		// TODO Auto-generated constructor stub
-	}
+	private static AppiumDriver<MobileElement> driver = inicializarAppiumDriver();
 	
 	WebDriverWait wait = new WebDriverWait(driver, 5);
 	

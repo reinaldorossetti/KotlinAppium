@@ -1,4 +1,6 @@
-package cadastrarUsuario;
+package screens;
+
+import org.junit.Test;
 
 import _core.BaseScreen;
 import io.appium.java_client.MobileElement;
@@ -6,13 +8,8 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 
 
-public class ScreenCadastrarUsuario extends BaseScreen {
+public class ScreenCadastrarUsuario extends BaseScreen {	
 
-	public ScreenCadastrarUsuario() {
-		super(driver);
-		// TODO Auto-generated constructor stub
-	}
-	
 	@iOSXCUITFindBy(id = "")
 	@AndroidFindBy(id = "br.com.alura.aluraesporte:id/login_botao_cadastrar_usuario")
 	private MobileElement cadastrarUsuario;
@@ -33,31 +30,36 @@ public class ScreenCadastrarUsuario extends BaseScreen {
 	@AndroidFindBy(id = "br.com.alura.aluraesporte:id/cadastro_usuario_botao_cadastrar")
 	private MobileElement cadastrar;
 	
-	
+	@Test
 	public void cadastrarUsuario () {
 		
-		click(cadastrarUsuario);
+		cadastrarUsuario.click();
+	}
+	
+	@Test
+	public void cadastrarUsuario2 () {
+		
+		cadastrarUsuario.click();
 	}
 	
 	public void nome (String text) {
 		
-		sendKeys(nome, text);
+		nome.sendKeys(text);
 	}
 	
 	public void senha (String text) {
 		
-		sendKeys(senha, text);
+		senha.sendKeys(text);
 	}
 	
 	public void confirmarSenha (String text) {
 		
-		sendKeys(confirmarSenha, text);
+		confirmarSenha.sendKeys(text);
 	}
 	
 	public void cadastrar () {
 		
-		click(cadastrar);
+		cadastrar.click();
 	}
-	
 
 }

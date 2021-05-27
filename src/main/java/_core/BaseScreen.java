@@ -1,17 +1,23 @@
 package _core;
 
+import java.time.Duration;
+
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 public class BaseScreen extends Capabilities {
-
-	public BaseScreen(AppiumDriver<MobileElement> driver) {
-		super(driver);
-		// TODO Auto-generated constructor stub
-	}
 	
+	private AppiumDriver<MobileElement> driver = inicializarAppiumDriver();
+
+	public BaseScreen () {
+		
+		PageFactory.initElements(new AppiumFieldDecorator(driver, Duration.ofSeconds(20)), this);
+	}
+
 	WebDriverWait wait = new WebDriverWait(driver, 5);
 	
 	public void click (MobileElement element) {

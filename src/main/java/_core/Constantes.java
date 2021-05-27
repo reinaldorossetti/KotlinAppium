@@ -8,7 +8,7 @@ public interface Constantes {
 	String automationName_value = "uiautomator2";
 	String appPackage_value = "br.com.alura.aluraesporte";
 	String appActivity_value = "br.com.alura.aluraesporte.ui.activity.MainActivity";
-	String APP_value = "C:\\Users\\Administrador\\eclipse-workspace\\Southsystem\\src\\main\\resources\\alura_esporte.apk";
+	String APP_value = "C:\\Users\\SouthSystem\\eclipse-workspace\\SouthSystem\\src\\main\\resources\\alura_esporte.apk";
 
 	//id do usuário
 	String idDoUsuario = "gabriel";
