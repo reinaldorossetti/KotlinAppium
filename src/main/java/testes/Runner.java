@@ -36,54 +36,53 @@ public class Runner implements Constantes {
 	@Test
 	public void A_testeCadastrarUsuario () {
 	
-		ScreenCadastrarUsuario ScreenCadastrarUsuario = new ScreenCadastrarUsuario();
-		ScreenCadastrarUsuario.cadastrarUsuario();
-		ScreenCadastrarUsuario.nome(idDoUsuario);
-		ScreenCadastrarUsuario.senha(senha);
-		ScreenCadastrarUsuario.confirmarSenha(senha);
-		ScreenCadastrarUsuario.cadastrar();
+		ScreenCadastrarUsuario screenCadastrarUsuario = new ScreenCadastrarUsuario();
+		screenCadastrarUsuario.cadastrarUsuario();
+		screenCadastrarUsuario.nome(idDoUsuario);
+		screenCadastrarUsuario.senha(senha);
+		screenCadastrarUsuario.confirmarSenha(senha);
+		screenCadastrarUsuario.cadastrar();
 	}
 	
 	@Test
 	public void B_loginUsuarioSenhaInvalidos () {
 		
-		ScreenLogin ScreenLogin = new ScreenLogin();
-		ScreenLogin.preencherIdDoUsuario("usuarioInexistente");
-		ScreenLogin.preencherSenha("9999999");
-		ScreenLogin.logar();
-		
-		Assert.assertEquals("Usuário ou senha inválidos", ScreenLogin.validaUsuarioSenhaInvalidos());
+		ScreenLogin screenLogin = new ScreenLogin();
+		screenLogin.preencherIdDoUsuario("usuarioInexistente");
+		screenLogin.preencherSenha("9999999");
+		screenLogin.logar();
+		Assert.assertEquals("Usuário ou senha inválidos", screenLogin.validaUsuarioSenhaInvalidos());
 	}
 		
 	@Test
 	public void C_testeLogin () {
 		
-		ScreenLogin ScreenLogin = new ScreenLogin();	
-		ScreenLogin.preencherIdDoUsuario(idDoUsuario);
-		ScreenLogin.preencherSenha(senha);
-		ScreenLogin.logar();
+		ScreenLogin screenLogin = new ScreenLogin();	
+		screenLogin.preencherIdDoUsuario(idDoUsuario);
+		screenLogin.preencherSenha(senha);
+		screenLogin.logar();
 	}
 	
 	@Test
-	public void E_testComprarProduto () {
+	public void D_testComprarProduto () {
 		
-		ScreenCadastrarUsuario ScreenCadastrarUsuario = new ScreenCadastrarUsuario();
-		ScreenCadastrarUsuario.cadastrarUsuario();
-		ScreenCadastrarUsuario.nome(idDoUsuario);
-		ScreenCadastrarUsuario.senha(senha);
-		ScreenCadastrarUsuario.confirmarSenha(senha);
-		ScreenCadastrarUsuario.cadastrar();
-		ScreenLogin ScreenLogin = new ScreenLogin();	
-		ScreenLogin.preencherIdDoUsuario(idDoUsuario);
-		ScreenLogin.preencherSenha(senha);
-		ScreenLogin.logar();
-		ScreenCompras ScreenCompras = new ScreenCompras();
-		ScreenCompras.produto(bolaFutebol);
-		ScreenCompras.comprar();
-		ScreenCompras.preencherNumeroCartao(numeroCartao);
-		ScreenCompras.preencherDataValidade(dataValidade);
-		ScreenCompras.preencherCvc(cvc);	
-		ScreenCompras.confirmarPagamento();
+		ScreenCadastrarUsuario screenCadastrarUsuario = new ScreenCadastrarUsuario();
+		screenCadastrarUsuario.cadastrarUsuario();
+		screenCadastrarUsuario.nome(idDoUsuario);
+		screenCadastrarUsuario.senha(senha);
+		screenCadastrarUsuario.confirmarSenha(senha);
+		screenCadastrarUsuario.cadastrar();
+		ScreenLogin screenLogin = new ScreenLogin();	
+		screenLogin.preencherIdDoUsuario(idDoUsuario);
+		screenLogin.preencherSenha(senha);
+		screenLogin.logar();
+		ScreenCompras screenCompras = new ScreenCompras();
+		screenCompras.produto(bolaFutebol);
+		screenCompras.comprar();
+		screenCompras.preencherNumeroCartao(numeroCartao);
+		screenCompras.preencherDataValidade(dataValidade);
+		screenCompras.preencherCvc(cvc);	
+		screenCompras.confirmarPagamento();
 		
 		//"Falso Negativo" ou "Falso Negativo" ???
 		String falhaAoCriarPagamento = "Falso Positivo"; 
@@ -97,20 +96,20 @@ public class Runner implements Constantes {
 	}
 		
 	@Test
-	public void F_testLogout () {
+	public void E_testLogout () {
 		
-		ScreenCadastrarUsuario ScreenCadastrarUsuario = new ScreenCadastrarUsuario();
-		ScreenCadastrarUsuario.cadastrarUsuario();
-		ScreenCadastrarUsuario.nome(idDoUsuario);
-		ScreenCadastrarUsuario.senha(senha);
-		ScreenCadastrarUsuario.confirmarSenha(senha);
-		ScreenCadastrarUsuario.cadastrar();
-		ScreenLogin ScreenLogin = new ScreenLogin();	
-		ScreenLogin.preencherIdDoUsuario(idDoUsuario);
-		ScreenLogin.preencherSenha(senha);
-		ScreenLogin.logar();
-		ScreenLogout ScreenLogout = new ScreenLogout();
-		ScreenLogout.deslogar();
+		ScreenCadastrarUsuario screenCadastrarUsuario = new ScreenCadastrarUsuario();
+		screenCadastrarUsuario.cadastrarUsuario();
+		screenCadastrarUsuario.nome(idDoUsuario);
+		screenCadastrarUsuario.senha(senha);
+		screenCadastrarUsuario.confirmarSenha(senha);
+		screenCadastrarUsuario.cadastrar();
+		ScreenLogin screenLogin = new ScreenLogin();	
+		screenLogin.preencherIdDoUsuario(idDoUsuario);
+		screenLogin.preencherSenha(senha);
+		screenLogin.logar();
+		ScreenLogout screenLogout = new ScreenLogout();
+		screenLogout.deslogar();
 	}
 	
 }

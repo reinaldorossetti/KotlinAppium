@@ -10,7 +10,8 @@ import _core.Capabilities;
 @RunWith(Suite.class)
 @SuiteClasses({
 
-
+	Runner.class,
+	
 })
 
 public class SuiteGeral {
