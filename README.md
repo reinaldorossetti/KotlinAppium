@@ -15,6 +15,11 @@
   * [Android Studio](https://developer.android.com/studio)
   * [Appium 1.20.2](https://github.com/appium/appium-desktop/releases)
 
+Para rodar os testes via terminal:
+``
+mvn clean -Dtest=Runner test
+``
+
 ### Configure as seguintes variáveis de ambiente no SO Windows:
 
   * Variável: JAVA_HOME | Caminho: Padrão da instalação do Java: C:\Program Files\Java
