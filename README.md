@@ -1,4 +1,4 @@
-# Teste - Processo Seletivo - South System, o teste foi melhorado usando kotlin.
+# Exemplo usando Kotlin com Appium, junit e Allure report. Gerenciador de dependencias o maven.
 
 ### Cenários de testes identificados na APK alura_esporte
 
@@ -38,25 +38,30 @@ mvn clean -Dtest=Runner test
 ##### Abra o pacote _Core, em seguida a classe: suite.java, clique com o botão direito do mouse, em seguida: Run As, JUnit Test.
 
 
-Exemplo usando UiSelector nativo do Android. Para isso usando a anotação @AndroidFindBy.
+### Exemplo usando UiSelector nativo do Android, ao invés do XPATH. Para isso usando a anotação @AndroidFindBy.
 
 // verifica se contains o parte do texto no elemento className.
+``
 "new UiSelector().className(\"android.widget.EditText\").textContains(\"mero cart\")"
-
+``
 // verifica se contains o exato texto no elemento className.
+``
 "new UiSelector().className(\"android.widget.EditText\").text(\"Data de validade\")"
-
+``
 // verifica se contains o exato texto no elemento resourceId.
+``
 "new UiSelector().resourceId("br.com.alura.aluraesporte:id/item_produto_nome").textContains("Bola de futebol")"
+``
 
 // Exemplo usando elemento pai e elemento filho.
+``
 "UiSelector().resourceId("XXXX:id/TEST_ID").childSelector(new UiSelector().className("android.widget.LinearLayout"))"
-
+``
 
 // para usar uma lista use o ArrayList<MobileElement>
+``
 @AndroidFindBy(accessibility = "A")
 @iOSXCUITFindBy(accessibility = "B")
 private lateinit var btnArrival0to6: ArrayList<MobileElement>
-
- * [Video do projeto em execução](https://www.loom.com/share/883cc50c922246fe9c50ab101d47b44a) :movie_camera:
+``
 
