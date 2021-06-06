@@ -41,7 +41,7 @@ class Runner : Constantes {
         screenLogin.preencherIdDoUsuario("usuarioInexistente")
         screenLogin.preencherSenha("9999999")
         screenLogin.logar()
-        Assert.assertEquals("Usu�rio ou senha inv�lidos", screenLogin.validaUsuarioSenhaInvalidos())
+        Assert.assertEquals("Usuario ou senha invalidos", screenLogin.validaUsuarioSenhaInvalidos())
     }
 
     @Test
@@ -75,8 +75,8 @@ class Runner : Constantes {
         //"Falso Negativo" ou "Falso Negativo" ???
         val falhaAoCriarPagamento = "Falso Positivo"
         val mensagemErro = "Falha ao criar pagamento"
-        if (falhaAoCriarPagamento.equals("Falso Positivo", ignoreCase = true)) {
-            println("No cen�rio de teste 'Comprar Produto', o sistema est� apresentando a seguinte notifica��o: <<<$mensagemErro>>> propositalmente.")
+        if (falhaAoCriarPagamento.equals("Falso Positivo")) {
+            println("No cenario de teste 'Comprar Produto', o sistema esta apresentando a seguinte notificacao: <<<$mensagemErro>>> propositalmente.")
         } else {
             Assert.fail("App com falha ao Criar Pagamento")
         }
