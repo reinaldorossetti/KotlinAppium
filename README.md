@@ -65,10 +65,10 @@ mvn clean -Dtest=Runner test
 
 ```
 
-// para usar uma lista use o ArrayList<MobileElement>
+// para usar uma lista use o ArrayList<MobileElement>  
 ``
-@AndroidFindBy(accessibility = "A")
-@iOSXCUITFindBy(accessibility = "B")
-private lateinit var btnArrival0to6: ArrayList<MobileElement>
+@AndroidFindBy(accessibility = "A")  
+@iOSXCUITFindBy(accessibility = "B")  
+private lateinit var btnArrival0to6: ArrayList<MobileElement>  
 ``
 
