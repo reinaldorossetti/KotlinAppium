@@ -1,4 +1,4 @@
-package testes
+package qa.reinaldo
 
 import org.junit.AfterClass
 import org.junit.runner.RunWith

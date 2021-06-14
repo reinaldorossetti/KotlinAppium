@@ -4,7 +4,7 @@
 http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>br.com.southsystem</groupId>
+	<groupId>qa.reinaldo</groupId>
 	<artifactId>Southsystem</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
@@ -16,6 +16,8 @@ http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 
 	<build>
+		<sourceDirectory>${project.basedir}/src/main/java</sourceDirectory>
+		<testSourceDirectory>${project.basedir}/src/test/java</testSourceDirectory>
 		<plugins>
 			<plugin>
 				<groupId>org.jetbrains.kotlin</groupId>
@@ -44,6 +46,7 @@ http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
 				<executions>
 					<execution>
 						<id>compile</id>
@@ -150,9 +153,9 @@ http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 			<version>${aspectj.version}</version>
 		</dependency>
 		<dependency>
-			<artifactId>kotlin-stdlib-jdk8</artifactId>
-			<groupId>org.jetbrains.kotlin</groupId>
-			<version>${kotlin.version}</version>
+			<groupId>io.qameta.allure</groupId>
+			<artifactId>allure-maven</artifactId>
+			<version>2.10.0</version>
 		</dependency>
 	</dependencies>
 

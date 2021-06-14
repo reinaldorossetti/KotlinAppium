@@ -1,9 +1,10 @@
-package testes
+package qa.reinaldo
 
 import _core.Capabilities
 import _core.Constantes
 import io.appium.java_client.AppiumDriver
 import io.appium.java_client.MobileElement
+import io.qameta.allure.Step
 import org.junit.*
 import org.junit.runners.MethodSorters
 import screens.ScreenCadastrarUsuario
@@ -26,6 +27,7 @@ class Runner : Constantes {
     }
 
     @Test
+    @Step("Realizando o cadastro de usuario")
     fun A_testeCadastrarUsuario() {
         val screenCadastrarUsuario = ScreenCadastrarUsuario()
         screenCadastrarUsuario.cadastrarUsuario()
@@ -36,15 +38,23 @@ class Runner : Constantes {
     }
 
     @Test
+    @Step("Realizando o cadastro com senha invalida - msn: {resultUsuarioSenhaInvalidos}")
     fun B_loginUsuarioSenhaInvalidos() {
         val screenLogin = ScreenLogin()
         screenLogin.preencherIdDoUsuario("usuarioInexistente")
         screenLogin.preencherSenha("9999999")
         screenLogin.logar()
-        Assert.assertEquals("Usuario ou senha invalidos", screenLogin.validaUsuarioSenhaInvalidos())
+        var resultUsuarioSenhaInvalidos = screenLogin.validaUsuarioSenhaInvalidos()
+        validaUsuarioSenhaInvalidos(resultUsuarioSenhaInvalidos)
+    }
+
+    @Step("Assert mensagem: {resultado}")
+    fun validaUsuarioSenhaInvalidos(resultado: String){
+        Assert.assertEquals("Usuario ou senha invalidos",resultado)
     }
 
     @Test
+    @Step("Realizando o login com sucesso")
     fun C_testeLogin() {
         val screenLogin = ScreenLogin()
         screenLogin.preencherIdDoUsuario(Constantes.idDoUsuario)
@@ -53,6 +63,7 @@ class Runner : Constantes {
     }
 
     @Test
+    @Step("Realizando a compra de um produto")
     fun D_testComprarProduto() {
         val screenCadastrarUsuario = ScreenCadastrarUsuario()
         screenCadastrarUsuario.cadastrarUsuario()
@@ -83,6 +94,7 @@ class Runner : Constantes {
     }
 
     @Test
+    @Step("Realizando o logout")
     fun E_testLogout() {
         val screenCadastrarUsuario = ScreenCadastrarUsuario()
         screenCadastrarUsuario.cadastrarUsuario()
