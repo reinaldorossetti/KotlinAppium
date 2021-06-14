@@ -41,22 +41,29 @@ mvn clean -Dtest=Runner test
 ### Exemplo usando UiSelector nativo do Android, ao invés do XPATH. Para isso usando a anotação @AndroidFindBy.
 
 // verifica se contains o parte do texto no elemento className.
-``
+```
 "new UiSelector().className(\"android.widget.EditText\").textContains(\"mero cart\")"
-``
+
+```
 // verifica se contains o exato texto no elemento className.
-``
+
+```
 "new UiSelector().className(\"android.widget.EditText\").text(\"Data de validade\")"
-``
+
+```
 // verifica se contains o exato texto no elemento resourceId.
-``
+
+```
 "new UiSelector().resourceId("br.com.alura.aluraesporte:id/item_produto_nome").textContains("Bola de futebol")"
-``
+
+```
 
 // Exemplo usando elemento pai e elemento filho.
-``
+
+```
 "UiSelector().resourceId("XXXX:id/TEST_ID").childSelector(new UiSelector().className("android.widget.LinearLayout"))"
-``
+
+```
 
 // para usar uma lista use o ArrayList<MobileElement>
 ``
