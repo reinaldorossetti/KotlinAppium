@@ -4,6 +4,7 @@ import _core.Capabilities
 import _core.Constantes
 import io.appium.java_client.AppiumDriver
 import io.appium.java_client.MobileElement
+import io.qameta.allure.Allure.step
 import io.qameta.allure.Step
 import org.junit.*
 import org.junit.runners.MethodSorters
@@ -57,6 +58,7 @@ class Runner : Constantes {
     @Step("Realizando o login com sucesso")
     fun C_testeLogin() {
         val screenLogin = ScreenLogin()
+        step("usuario: ${Constantes.idDoUsuario}")
         screenLogin.preencherIdDoUsuario(Constantes.idDoUsuario)
         screenLogin.preencherSenha(Constantes.senha)
         screenLogin.logar()
@@ -79,6 +81,7 @@ class Runner : Constantes {
         screenCompras.produto(Constantes.bolaFutebol)
         screenCompras.comprar()
         screenCompras.preencherNumeroCartao(Constantes.numeroCartao)
+        step("numeroCartao: ${Constantes.numeroCartao}")
         screenCompras.preencherDataValidade(Constantes.dataValidade)
         screenCompras.preencherCvc(Constantes.cvc)
         screenCompras.confirmarPagamento()
