@@ -76,10 +76,10 @@ mvn clean -Dtest=Runner test
 private lateinit var btnArrival0to6: ArrayList<MobileElement>  
 ``
 
-References:
-solve problem in intellij:
-https://stackoverflow.com/questions/31712046/kotlin-unresolved-reference-in-intellij
-appium client:
-https://github.com/appium/java-client/wiki
-page object:
-https://github.com/appium/java-client/blob/master/docs/Page-objects.md
+References:  
+solve problem in intellij:  
+https://stackoverflow.com/questions/31712046/kotlin-unresolved-reference-in-intellij  
+appium client:  
+https://github.com/appium/java-client/wiki  
+page object:  
+https://github.com/appium/java-client/blob/master/docs/Page-objects.md  
