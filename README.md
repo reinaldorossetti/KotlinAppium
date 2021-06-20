@@ -1,4 +1,5 @@
-## Exemplo usando Kotlin com Appium, junit e Allure report. Gerenciador de dependencias o maven.
+## Exemplo usando Kotlin com Appium, junit e Allure report.
+O Gerenciador de dependencias usado nesse projeto foi o Maven para seguir com o projeto inicial.
 
 A ideia desse projeto é mostrar os comandos do Nativo removendo os comandos de localização dos elementos em xpath pelo UiSelector. O exemplo original é em java, 
 resolvi mudar para Kotlin, assim mostro como Kotlin ajuda a reduzir os comandos em Java.
