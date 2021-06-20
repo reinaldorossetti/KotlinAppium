@@ -3,6 +3,7 @@ package _core
 import io.appium.java_client.AppiumDriver
 import io.appium.java_client.MobileElement
 import io.appium.java_client.pagefactory.AppiumFieldDecorator
+import org.openqa.selenium.By
 import org.openqa.selenium.support.PageFactory
 import org.openqa.selenium.support.ui.ExpectedConditions
 import org.openqa.selenium.support.ui.WebDriverWait
@@ -21,6 +22,14 @@ open class BaseScreen : Capabilities() {
         }
     }
 
+    fun click(element: By) {
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(element)).click()
+        } catch (e: Exception) {
+            wait.until(ExpectedConditions.presenceOfElementLocated(element)).click()
+        }
+    }
+
     fun sendKeys(element: MobileElement?, text: String?) {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(element)).sendKeys(text)
@@ -30,6 +39,6 @@ open class BaseScreen : Capabilities() {
     }
 
     init {
-        PageFactory.initElements(AppiumFieldDecorator(driver, Duration.ofSeconds(20)), this)
+        PageFactory.initElements(AppiumFieldDecorator(driver, Duration.ofSeconds(15)), this)
     }
 }

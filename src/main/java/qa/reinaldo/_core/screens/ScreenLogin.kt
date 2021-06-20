@@ -28,11 +28,11 @@ class ScreenLogin : BaseScreen() {
     }
 
     fun preencherSenha(text: String?) {
-        sendKeys(senha, text)
+        senha.setValue(text)
     }
 
     fun logar() {
-        click(logar)
+        logar.click()
     }
 
     fun validaUsuarioSenhaInvalidos(): String {

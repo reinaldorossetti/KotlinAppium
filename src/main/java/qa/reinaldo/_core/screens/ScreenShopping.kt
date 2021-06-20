@@ -5,7 +5,6 @@ import io.appium.java_client.MobileBy
 import io.appium.java_client.MobileElement
 import io.appium.java_client.pagefactory.AndroidFindBy
 import io.appium.java_client.pagefactory.iOSXCUITFindBy
-import org.openqa.selenium.support.ui.ExpectedConditions
 
 
 class ScreenShopping : BaseScreen() {
@@ -33,7 +32,7 @@ class ScreenShopping : BaseScreen() {
     fun produto(text: String) {
         val MobileElement =
             "new UiSelector().resourceId(\"br.com.alura.aluraesporte:id/item_produto_nome\").textContains(\"$text\")"
-        wait.until(ExpectedConditions.elementToBeClickable(MobileBy.AndroidUIAutomator(MobileElement))).click()
+        click(MobileBy.AndroidUIAutomator(MobileElement))
     }
 
     fun comprar() {
@@ -53,7 +52,7 @@ class ScreenShopping : BaseScreen() {
     }
 
     fun confirmarPagamento() {
-        click(confirmarPagamento)
+        confirmarPagamento.click()
     }
 
 }

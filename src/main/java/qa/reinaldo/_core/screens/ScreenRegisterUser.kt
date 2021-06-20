@@ -4,7 +4,7 @@ import _core.BaseScreen
 import io.appium.java_client.MobileElement
 import io.appium.java_client.pagefactory.AndroidFindBy
 import io.appium.java_client.pagefactory.iOSXCUITFindBy
-import org.junit.Test
+
 
 class ScreenRegisterUser : BaseScreen() {
 
@@ -28,13 +28,7 @@ class ScreenRegisterUser : BaseScreen() {
     @AndroidFindBy(id = "br.com.alura.aluraesporte:id/cadastro_usuario_botao_cadastrar")
     private lateinit var cadastrar: MobileElement
 
-    @Test
     fun cadastrarUsuario() {
-        cadastrarUsuario.click()
-    }
-
-    @Test
-    fun cadastrarUsuario2() {
         cadastrarUsuario.click()
     }
 

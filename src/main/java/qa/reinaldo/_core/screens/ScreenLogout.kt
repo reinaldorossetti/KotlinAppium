@@ -12,6 +12,6 @@ class ScreenLogout : BaseScreen() {
     private lateinit var deslogar: MobileElement
 
     fun deslogar() {
-        click(deslogar)
+        deslogar.click()
     }
 }
