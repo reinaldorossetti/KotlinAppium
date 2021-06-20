@@ -8,14 +8,16 @@ import io.qameta.allure.Allure.step
 import io.qameta.allure.Step
 import org.junit.*
 import org.junit.runners.MethodSorters
-import screens.ScreenCadastrarUsuario
-import screens.ScreenCompras
-import screens.ScreenLogin
-import screens.ScreenLogout
+import qa.reinaldo._core.screens.ScreenRegisterUser
+import qa.reinaldo._core.screens.ScreenShopping
+import qa.reinaldo._core.screens.ScreenLogin
+import qa.reinaldo._core.screens.ScreenLogout
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 class Runner : Constantes {
+
     var driver: AppiumDriver<MobileElement>? = null
+    private var screenRegisterUser = ScreenRegisterUser()
 
     @Before
     fun iniciar() {
@@ -30,12 +32,11 @@ class Runner : Constantes {
     @Test
     @Step("Realizando o cadastro de usuario")
     fun A_testeCadastrarUsuario() {
-        val screenCadastrarUsuario = ScreenCadastrarUsuario()
-        screenCadastrarUsuario.cadastrarUsuario()
-        screenCadastrarUsuario.nome(Constantes.idDoUsuario)
-        screenCadastrarUsuario.senha(Constantes.senha)
-        screenCadastrarUsuario.confirmarSenha(Constantes.senha)
-        screenCadastrarUsuario.cadastrar()
+        screenRegisterUser.cadastrarUsuario()
+        screenRegisterUser.nome(Constantes.idDoUsuario)
+        screenRegisterUser.senha(Constantes.senha)
+        screenRegisterUser.confirmarSenha(Constantes.senha)
+        screenRegisterUser.cadastrar()
     }
 
     @Test
@@ -67,17 +68,16 @@ class Runner : Constantes {
     @Test
     @Step("Realizando a compra de um produto")
     fun D_testComprarProduto() {
-        val screenCadastrarUsuario = ScreenCadastrarUsuario()
-        screenCadastrarUsuario.cadastrarUsuario()
-        screenCadastrarUsuario.nome(Constantes.idDoUsuario)
-        screenCadastrarUsuario.senha(Constantes.senha)
-        screenCadastrarUsuario.confirmarSenha(Constantes.senha)
-        screenCadastrarUsuario.cadastrar()
+        screenRegisterUser.cadastrarUsuario()
+        screenRegisterUser.nome(Constantes.idDoUsuario)
+        screenRegisterUser.senha(Constantes.senha)
+        screenRegisterUser.confirmarSenha(Constantes.senha)
+        screenRegisterUser.cadastrar()
         val screenLogin = ScreenLogin()
         screenLogin.preencherIdDoUsuario(Constantes.idDoUsuario)
         screenLogin.preencherSenha(Constantes.senha)
         screenLogin.logar()
-        val screenCompras = ScreenCompras()
+        val screenCompras = ScreenShopping()
         screenCompras.produto(Constantes.bolaFutebol)
         screenCompras.comprar()
         screenCompras.preencherNumeroCartao(Constantes.numeroCartao)
@@ -99,12 +99,11 @@ class Runner : Constantes {
     @Test
     @Step("Realizando o logout")
     fun E_testLogout() {
-        val screenCadastrarUsuario = ScreenCadastrarUsuario()
-        screenCadastrarUsuario.cadastrarUsuario()
-        screenCadastrarUsuario.nome(Constantes.idDoUsuario)
-        screenCadastrarUsuario.senha(Constantes.senha)
-        screenCadastrarUsuario.confirmarSenha(Constantes.senha)
-        screenCadastrarUsuario.cadastrar()
+        screenRegisterUser.cadastrarUsuario()
+        screenRegisterUser.nome(Constantes.idDoUsuario)
+        screenRegisterUser.senha(Constantes.senha)
+        screenRegisterUser.confirmarSenha(Constantes.senha)
+        screenRegisterUser.cadastrar()
         val screenLogin = ScreenLogin()
         screenLogin.preencherIdDoUsuario(Constantes.idDoUsuario)
         screenLogin.preencherSenha(Constantes.senha)

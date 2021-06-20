@@ -1,4 +1,4 @@
-package screens
+package qa.reinaldo._core.screens
 
 import _core.BaseScreen
 import io.appium.java_client.MobileElement

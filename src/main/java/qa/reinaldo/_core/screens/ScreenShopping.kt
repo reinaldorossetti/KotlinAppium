@@ -1,25 +1,22 @@
-package screens
+package qa.reinaldo._core.screens
 
 import _core.BaseScreen
-import _core.Capabilities
-import io.appium.java_client.AppiumDriver
 import io.appium.java_client.MobileBy
 import io.appium.java_client.MobileElement
 import io.appium.java_client.pagefactory.AndroidFindBy
-import io.appium.java_client.pagefactory.HowToUseLocators
 import io.appium.java_client.pagefactory.iOSXCUITFindBy
 import org.openqa.selenium.support.ui.ExpectedConditions
 
 
-class ScreenCompras : BaseScreen() {
+class ScreenShopping : BaseScreen() {
 
     @iOSXCUITFindBy(id = "")
     @AndroidFindBy(id = "br.com.alura.aluraesporte:id/detalhes_produto_botao_comprar")
-    private val comprar: MobileElement? = null
+    private lateinit var comprar: MobileElement
 
     @iOSXCUITFindBy(id = "")
     @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.widget.EditText\").textContains(\"mero cart\")")
-    private val numeroCartao: MobileElement? = null
+    private lateinit var numeroCartao: MobileElement
 
     @iOSXCUITFindBy(id = "")
     @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.widget.EditText\").text(\"Data de validade\")")

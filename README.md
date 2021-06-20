@@ -15,6 +15,10 @@
   * [Android Studio](https://developer.android.com/studio)
   * [Appium 1.20.2](https://github.com/appium/appium-desktop/releases)
 
+Pré-requisito:
+1. Inicie o Appium server;
+2. Abra o emulador ou conecte o device.
+
 Para rodar os testes via terminal:
 ``
 mvn clean -Dtest=Runner test
@@ -72,3 +76,10 @@ mvn clean -Dtest=Runner test
 private lateinit var btnArrival0to6: ArrayList<MobileElement>  
 ``
 
+References:
+solve problem in intellij:
+https://stackoverflow.com/questions/31712046/kotlin-unresolved-reference-in-intellij
+appium client:
+https://github.com/appium/java-client/wiki
+page object:
+https://github.com/appium/java-client/blob/master/docs/Page-objects.md
