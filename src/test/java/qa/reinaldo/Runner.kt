@@ -6,28 +6,31 @@ import io.appium.java_client.AppiumDriver
 import io.appium.java_client.MobileElement
 import io.qameta.allure.Allure.step
 import io.qameta.allure.Step
-import org.junit.*
-import org.junit.runners.MethodSorters
-import qa.reinaldo._core.screens.ScreenRegisterUser
-import qa.reinaldo._core.screens.ScreenShopping
+import org.junit.jupiter.api.*
+import org.opentest4j.AssertionFailedError
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.assertThrows
 import qa.reinaldo._core.screens.ScreenLogin
 import qa.reinaldo._core.screens.ScreenLogout
+import qa.reinaldo._core.screens.ScreenRegisterUser
+import qa.reinaldo._core.screens.ScreenShopping
 
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+
 class Runner : Constantes {
 
     var driver: AppiumDriver<MobileElement>? = null
     private var screenRegisterUser = ScreenRegisterUser()
 
-    @Before
+    @BeforeEach
     fun iniciar() {
         driver = Capabilities.inicializarAppiumDriver()
     }
 
-    @After
+    @AfterEach
     fun finalizar() {
         Capabilities.finalizarAppiumDrivery()
     }
+
 
     @Test
     @Step("Realizando o cadastro de usuario")
@@ -42,17 +45,21 @@ class Runner : Constantes {
     @Test
     @Step("Realizando o cadastro com senha invalida - msn: {resultUsuarioSenhaInvalidos}")
     fun B_loginUsuarioSenhaInvalidos() {
-        val screenLogin = ScreenLogin()
-        screenLogin.preencherIdDoUsuario("usuarioInexistente")
-        screenLogin.preencherSenha("9999999")
-        screenLogin.logar()
-        var resultUsuarioSenhaInvalidos = screenLogin.validaUsuarioSenhaInvalidos()
-        validaUsuarioSenhaInvalidos(resultUsuarioSenhaInvalidos)
+        assertThrows(
+            AssertionFailedError::class.java
+        ) {
+            val screenLogin = ScreenLogin()
+            screenLogin.preencherIdDoUsuario("usuarioInexistente")
+            screenLogin.preencherSenha("9999999")
+            screenLogin.logar()
+            var resultUsuarioSenhaInvalidos = screenLogin.validaUsuarioSenhaInvalidos()
+            validaUsuarioSenhaInvalidos(resultUsuarioSenhaInvalidos)
+        }
     }
 
     @Step("Assert mensagem: {resultado}")
     fun validaUsuarioSenhaInvalidos(resultado: String){
-        Assert.assertEquals("Usuario ou senha invalidos",resultado)
+        assertEquals("Usuario ou senha invalidos",resultado)
     }
 
     @Test
@@ -92,7 +99,7 @@ class Runner : Constantes {
         if (falhaAoCriarPagamento.equals("Falso Positivo")) {
             println("No cenario de teste 'Comprar Produto', o sistema esta apresentando a seguinte notificacao: <<<$mensagemErro>>> propositalmente.")
         } else {
-            Assert.fail("App com falha ao Criar Pagamento")
+            fail("App com falha ao Criar Pagamento")
         }
     }
 
