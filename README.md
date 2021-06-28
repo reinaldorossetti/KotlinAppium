@@ -1,4 +1,4 @@
-# Exemplo usando Kotlin com Appium, junit e Allure report. Gerenciador de dependencias o maven.
+# Exemplo usando Kotlin com Appium, junit 5 e Allure report. Gerenciador de dependencias o maven.
 
 ### Cenários de testes identificados na APK alura_esporte
 
