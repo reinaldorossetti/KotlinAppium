@@ -1,4 +1,12 @@
+<<<<<<< HEAD
 # Exemplo usando Kotlin com Appium, junit 5 e Allure report. Gerenciador de dependencias o maven.
+=======
+## Exemplo usando Kotlin com Appium, junit e Allure report.
+O Gerenciador de dependencias usado nesse projeto foi o Maven para seguir com o projeto inicial.
+
+A ideia desse projeto é mostrar os comandos do Nativo removendo os comandos de localização dos elementos em xpath pelo UiSelector. O exemplo original é em java, 
+resolvi mudar para Kotlin, assim mostro como Kotlin ajuda a reduzir os comandos em Java.
+>>>>>>> d6e944c9694fb321ae446c640f5d0047a34a1d32
 
 ### Cenários de testes identificados na APK alura_esporte
 
@@ -70,16 +78,16 @@ mvn clean -Dtest=Runner test
 ```
 
 // para usar uma lista use o ArrayList<MobileElement>  
-``
+```
 @AndroidFindBy(accessibility = "A")  
 @iOSXCUITFindBy(accessibility = "B")  
 private lateinit var btnArrival0to6: ArrayList<MobileElement>  
-``
+```
 
-References:
-solve problem in intellij:
-https://stackoverflow.com/questions/31712046/kotlin-unresolved-reference-in-intellij
-appium client:
-https://github.com/appium/java-client/wiki
-page object:
-https://github.com/appium/java-client/blob/master/docs/Page-objects.md
+References:  
+solve problem in intellij:  
+https://stackoverflow.com/questions/31712046/kotlin-unresolved-reference-in-intellij  
+appium client:  
+https://github.com/appium/java-client/wiki  
+page object:  
+https://github.com/appium/java-client/blob/master/docs/Page-objects.md  
