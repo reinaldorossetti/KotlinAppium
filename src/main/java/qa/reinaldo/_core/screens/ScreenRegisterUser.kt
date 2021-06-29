@@ -32,16 +32,19 @@ class ScreenRegisterUser : BaseScreen() {
         cadastrarUsuario.click()
     }
 
-    fun nome(text: String?) {
+    fun nome(text: String?): ScreenRegisterUser {
         nome.sendKeys(text)
+        return this
     }
 
-    fun senha(text: String?) {
+    fun senha(text: String?): ScreenRegisterUser {
         senha.sendKeys(text)
+        return this
     }
 
-    fun confirmarSenha(text: String?) {
+    fun confirmarSenha(text: String?): ScreenRegisterUser {
         confirmarSenha.sendKeys(text)
+        return this
     }
 
     fun cadastrar() {

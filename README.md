@@ -27,10 +27,10 @@ Pré-requisito:
 1. Inicie o Appium server;
 2. Abra o emulador ou conecte o device.
 
-Para rodar os testes via terminal:
-``
+Para rodar os testes via terminal:  
+```
 mvn clean -Dtest=Runner test
-``
+```
 
 ### Configure as seguintes variáveis de ambiente no SO Windows:
 

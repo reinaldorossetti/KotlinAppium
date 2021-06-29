@@ -15,19 +15,5 @@ interface Constantes {
         var APP_value =
             "$path\\src\\main\\resources\\alura_esporte.apk"
 
-        //id do usuario
-        val idDoUsuario = "gabriel"
-        val senha = "123Mud@r"
-
-        //Produtos
-        val bolaFutebol = "Bola de futebol"
-        val camisa = "Camisa"
-        val chuteira = "Chuteira"
-        val bermuda = "Bermuda"
-
-        //Dados Cartao
-        val numeroCartao = "5381579886310193"
-        val dataValidade = "03/23"
-        val cvc = "235"
     }
 }

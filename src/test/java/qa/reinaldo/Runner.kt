@@ -14,12 +14,16 @@ import qa.reinaldo._core.screens.ScreenLogin
 import qa.reinaldo._core.screens.ScreenLogout
 import qa.reinaldo._core.screens.ScreenRegisterUser
 import qa.reinaldo._core.screens.ScreenShopping
+import qa.reinaldo._core.dados.Produto
+import qa.reinaldo._core.dados.User
 
 
 class Runner : Constantes {
 
-    var driver: AppiumDriver<MobileElement>? = null
+    private var driver: AppiumDriver<MobileElement>? = null
     private var screenRegisterUser = ScreenRegisterUser()
+    private var user = User()
+    private var produto = Produto()
 
     @BeforeEach
     fun iniciar() {
@@ -31,14 +35,13 @@ class Runner : Constantes {
         Capabilities.finalizarAppiumDrivery()
     }
 
-
     @Test
     @Step("Realizando o cadastro de usuario")
     fun A_testeCadastrarUsuario() {
         screenRegisterUser.cadastrarUsuario()
-        screenRegisterUser.nome(Constantes.idDoUsuario)
-        screenRegisterUser.senha(Constantes.senha)
-        screenRegisterUser.confirmarSenha(Constantes.senha)
+        screenRegisterUser.nome(user.idDoUsuario)
+        screenRegisterUser.senha(user.senha)
+        screenRegisterUser.confirmarSenha(user.senha)
         screenRegisterUser.cadastrar()
     }
 
@@ -52,13 +55,14 @@ class Runner : Constantes {
             screenLogin.preencherIdDoUsuario("usuarioInexistente")
             screenLogin.preencherSenha("9999999")
             screenLogin.logar()
-            var resultUsuarioSenhaInvalidos = screenLogin.validaUsuarioSenhaInvalidos()
-            validaUsuarioSenhaInvalidos(resultUsuarioSenhaInvalidos)
+            user.userInvalido = screenLogin.validaUsuarioSenhaInvalidos()
+            validaUsuarioSenhaInvalidos(user.userInvalido)
         }
     }
 
     @Step("Assert mensagem: {resultado}")
     fun validaUsuarioSenhaInvalidos(resultado: String){
+        println(resultado)
         assertEquals("Usuario ou senha invalidos",resultado)
     }
 
@@ -66,9 +70,9 @@ class Runner : Constantes {
     @Step("Realizando o login com sucesso")
     fun C_testeLogin() {
         val screenLogin = ScreenLogin()
-        step("usuario: ${Constantes.idDoUsuario}")
-        screenLogin.preencherIdDoUsuario(Constantes.idDoUsuario)
-        screenLogin.preencherSenha(Constantes.senha)
+        step("usuario: ${user.idDoUsuario}")
+        screenLogin.preencherIdDoUsuario(user.idDoUsuario)
+        screenLogin.preencherSenha(user.senha)
         screenLogin.logar()
     }
 
@@ -76,21 +80,19 @@ class Runner : Constantes {
     @Step("Realizando a compra de um produto")
     fun D_testComprarProduto() {
         screenRegisterUser.cadastrarUsuario()
-        screenRegisterUser.nome(Constantes.idDoUsuario)
-        screenRegisterUser.senha(Constantes.senha)
-        screenRegisterUser.confirmarSenha(Constantes.senha)
+        screenRegisterUser.nome(user.idDoUsuario).senha(user.senha).confirmarSenha(user.senha)
         screenRegisterUser.cadastrar()
         val screenLogin = ScreenLogin()
-        screenLogin.preencherIdDoUsuario(Constantes.idDoUsuario)
-        screenLogin.preencherSenha(Constantes.senha)
+        screenLogin.preencherIdDoUsuario(user.idDoUsuario)
+        screenLogin.preencherSenha(user.senha)
         screenLogin.logar()
         val screenCompras = ScreenShopping()
-        screenCompras.produto(Constantes.bolaFutebol)
+        screenCompras.produto(produto.bolaFutebol)
         screenCompras.comprar()
-        screenCompras.preencherNumeroCartao(Constantes.numeroCartao)
-        step("numeroCartao: ${Constantes.numeroCartao}")
-        screenCompras.preencherDataValidade(Constantes.dataValidade)
-        screenCompras.preencherCvc(Constantes.cvc)
+        screenCompras.preencherNumeroCartao(user.numeroCartao)
+        step("numeroCartao: ${user.numeroCartao}")
+        screenCompras.preencherDataValidade(user.dataValidade)
+        screenCompras.preencherCvc(user.cvc)
         screenCompras.confirmarPagamento()
 
         //"Falso Negativo" ou "Falso Negativo" ???
@@ -107,13 +109,11 @@ class Runner : Constantes {
     @Step("Realizando o logout")
     fun E_testLogout() {
         screenRegisterUser.cadastrarUsuario()
-        screenRegisterUser.nome(Constantes.idDoUsuario)
-        screenRegisterUser.senha(Constantes.senha)
-        screenRegisterUser.confirmarSenha(Constantes.senha)
+        screenRegisterUser.nome(user.idDoUsuario).senha(user.senha).confirmarSenha(user.senha)
         screenRegisterUser.cadastrar()
         val screenLogin = ScreenLogin()
-        screenLogin.preencherIdDoUsuario(Constantes.idDoUsuario)
-        screenLogin.preencherSenha(Constantes.senha)
+        screenLogin.preencherIdDoUsuario(user.idDoUsuario)
+        screenLogin.preencherSenha(user.senha)
         screenLogin.logar()
         val screenLogout = ScreenLogout()
         screenLogout.deslogar()
