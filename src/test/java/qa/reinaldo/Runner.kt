@@ -1,7 +1,6 @@
 package qa.reinaldo
 
 import _core.Capabilities
-import _core.Constantes
 import io.appium.java_client.AppiumDriver
 import io.appium.java_client.MobileElement
 import io.qameta.allure.Allure.step
@@ -17,8 +16,8 @@ import qa.reinaldo._core.screens.ScreenShopping
 import qa.reinaldo._core.dados.Produto
 import qa.reinaldo._core.dados.User
 
-
-class Runner : Constantes {
+@TestMethodOrder(MethodOrderer.OrderAnnotation::class)
+class Runner {
 
     private var driver: AppiumDriver<MobileElement>? = null
     private var screenRegisterUser = ScreenRegisterUser()
@@ -37,7 +36,8 @@ class Runner : Constantes {
 
     @Test
     @Step("Realizando o cadastro de usuario")
-    fun A_testeCadastrarUsuario() {
+    @Order(1)
+    fun testeCadastrarUsuario() {
         screenRegisterUser.cadastrarUsuario()
         screenRegisterUser.nome(user.idDoUsuario)
         screenRegisterUser.senha(user.senha)
@@ -47,7 +47,8 @@ class Runner : Constantes {
 
     @Test
     @Step("Realizando o cadastro com senha invalida - msn: {resultUsuarioSenhaInvalidos}")
-    fun B_loginUsuarioSenhaInvalidos() {
+    @Order(2)
+    fun loginUsuarioSenhaInvalidos() {
         assertThrows(
             AssertionFailedError::class.java
         ) {
@@ -67,8 +68,9 @@ class Runner : Constantes {
     }
 
     @Test
+    @Order(3)
     @Step("Realizando o login com sucesso")
-    fun C_testeLogin() {
+    fun testeLogin() {
         val screenLogin = ScreenLogin()
         step("usuario: ${user.idDoUsuario}")
         screenLogin.preencherIdDoUsuario(user.idDoUsuario)
@@ -77,8 +79,9 @@ class Runner : Constantes {
     }
 
     @Test
+    @Order(3)
     @Step("Realizando a compra de um produto")
-    fun D_testComprarProduto() {
+    fun testComprarProduto() {
         screenRegisterUser.cadastrarUsuario()
         screenRegisterUser.nome(user.idDoUsuario).senha(user.senha).confirmarSenha(user.senha)
         screenRegisterUser.cadastrar()
@@ -106,8 +109,9 @@ class Runner : Constantes {
     }
 
     @Test
+    @Order(4)
     @Step("Realizando o logout")
-    fun E_testLogout() {
+    fun testLogout() {
         screenRegisterUser.cadastrarUsuario()
         screenRegisterUser.nome(user.idDoUsuario).senha(user.senha).confirmarSenha(user.senha)
         screenRegisterUser.cadastrar()
