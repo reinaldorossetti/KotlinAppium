@@ -1,4 +1,4 @@
-package qa.reinaldo._core.dados
+package qa.reinaldo._core.model
 
 data class Produto(
     //Produtos

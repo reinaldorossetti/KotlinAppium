@@ -13,8 +13,8 @@ import qa.reinaldo._core.screens.ScreenLogin
 import qa.reinaldo._core.screens.ScreenLogout
 import qa.reinaldo._core.screens.ScreenRegisterUser
 import qa.reinaldo._core.screens.ScreenShopping
-import qa.reinaldo._core.dados.Produto
-import qa.reinaldo._core.dados.User
+import qa.reinaldo._core.model.Produto
+import qa.reinaldo._core.model.User
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation::class)
 class Runner {
