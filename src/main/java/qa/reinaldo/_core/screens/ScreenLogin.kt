@@ -17,7 +17,7 @@ class ScreenLogin : BaseScreen() {
 
     @iOSXCUITFindBy(id = "")
     @AndroidFindBy(id = "br.com.alura.aluraesporte:id/login_botao_logar")
-    private lateinit var logar: MobileElement
+    lateinit var logar: MobileElement
 
     @iOSXCUITFindBy(id = "")
     @AndroidFindBy(id = "br.com.alura.aluraesporte:id/mensagem_erro_login")

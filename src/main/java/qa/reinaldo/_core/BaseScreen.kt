@@ -12,7 +12,7 @@ import java.time.Duration
 open class BaseScreen : Capabilities() {
 
     private val driver: AppiumDriver<MobileElement>? = Capabilities.Companion.inicializarAppiumDriver()
-    open var wait = WebDriverWait(driver, 15)
+    open var wait = WebDriverWait(driver, 30)
 
     fun click(element: MobileElement?) {
         try {
@@ -39,6 +39,6 @@ open class BaseScreen : Capabilities() {
     }
 
     init {
-        PageFactory.initElements(AppiumFieldDecorator(driver, Duration.ofSeconds(15)), this)
+        PageFactory.initElements(AppiumFieldDecorator(driver, Duration.ofSeconds(30)), this)
     }
 }

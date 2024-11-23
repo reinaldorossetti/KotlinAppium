@@ -80,6 +80,25 @@ mvn clean -Dtest=Runner test
 private lateinit var btnArrival0to6: ArrayList<MobileElement>  
 ```
 
+The fully cross platform example (WEB, Mobile Android and Mobile IOS):
+```
+import org.openqa.selenium.remote.RemoteWebElement;
+import io.appium.java_client.pagefactory.*;
+import org.openqa.selenium.support.FindBy;
+
+//the fully cross platform example
+@FindBy(someStrategy) //for browser or web view html UI
+@AndroidFindBy(someStrategy) //for Android native UI
+@iOSFindBy(someStrategy)  //for iOS native UI
+RemoteWebElement someElement;
+
+//the fully cross platform example
+@FindBy(someStrategy)
+@AndroidFindBy(someStrategy) //for Android native UI
+@iOSFindBy(someStrategy)  //for iOS native UI
+List<RemoteWebElement> someElements;
+```
+
 References:  
 solve problem in intellij:  
 https://stackoverflow.com/questions/31712046/kotlin-unresolved-reference-in-intellij  
@@ -87,3 +106,5 @@ appium client:
 https://github.com/appium/java-client/wiki  
 page object:  
 https://github.com/appium/java-client/blob/master/docs/Page-objects.md  
+Asserts:
+https://allurereport.org/docs/junit5/

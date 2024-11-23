@@ -3,26 +3,30 @@ package qa.reinaldo
 import _core.Capabilities
 import io.appium.java_client.AppiumDriver
 import io.appium.java_client.MobileElement
+import io.qameta.allure.Allure
 import io.qameta.allure.Allure.step
+import io.qameta.allure.Description
+import io.qameta.allure.Severity
 import io.qameta.allure.Step
 import org.junit.jupiter.api.*
 import org.opentest4j.AssertionFailedError
-import org.junit.jupiter.api.Assertions.assertEquals
-import org.junit.jupiter.api.Assertions.assertThrows
 import qa.reinaldo._core.screens.ScreenLogin
 import qa.reinaldo._core.screens.ScreenLogout
 import qa.reinaldo._core.screens.ScreenRegisterUser
 import qa.reinaldo._core.screens.ScreenShopping
 import qa.reinaldo._core.model.Produto
 import qa.reinaldo._core.model.User
+import io.qameta.allure.SeverityLevel.*
+import org.junit.jupiter.api.Assertions.*
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation::class)
-class Runner {
+class TestsRunner {
 
     private var driver: AppiumDriver<MobileElement>? = null
     private var screenRegisterUser = ScreenRegisterUser()
     private var user = User()
     private var produto = Produto()
+    private val screenLogin = ScreenLogin()
 
     @BeforeEach
     fun iniciar() {
@@ -35,14 +39,28 @@ class Runner {
     }
 
     @Test
-    @Step("Realizando o cadastro de usuario")
+    @DisplayName("CT01 - Teste que realiza o cadastro de usuario.")
+    @Description("Passo a Passo: " +
+            "1. Selecionar Cadastrar na tela de login;" +
+            "2. Inserir o Usuario e Senha;" +
+            "3. Confirmar dados cadastrais;" +
+            "4. Exibir mensagem de Sucesso.")
     @Order(1)
+    @Severity(CRITICAL)
     fun testeCadastrarUsuario() {
+        Allure.step("Inserir dados do cadastro")
         screenRegisterUser.cadastrarUsuario()
         screenRegisterUser.nome(user.idDoUsuario)
         screenRegisterUser.senha(user.senha)
         screenRegisterUser.confirmarSenha(user.senha)
+
+        Allure.step("Efetuar o cadastro")
         screenRegisterUser.cadastrar()
+
+
+        val actualString = screenLogin.logar.text
+        Allure.step("Validade teste realizado: ${actualString}")
+        assertTrue(actualString.contains("LOGAR"));
     }
 
     @Test
@@ -71,7 +89,6 @@ class Runner {
     @Order(3)
     @Step("Realizando o login com sucesso")
     fun testeLogin() {
-        val screenLogin = ScreenLogin()
         step("usuario: ${user.idDoUsuario}")
         screenLogin.preencherIdDoUsuario(user.idDoUsuario)
         screenLogin.preencherSenha(user.senha)

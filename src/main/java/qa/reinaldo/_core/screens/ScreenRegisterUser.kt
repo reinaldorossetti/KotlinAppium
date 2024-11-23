@@ -10,7 +10,7 @@ class ScreenRegisterUser : BaseScreen() {
 
     @iOSXCUITFindBy(id = "")
     @AndroidFindBy(id = "br.com.alura.aluraesporte:id/login_botao_cadastrar_usuario")
-    private lateinit var cadastrarUsuario: MobileElement
+    lateinit var cadastrarUsuario: MobileElement
 
     @iOSXCUITFindBy(id = "")
     @AndroidFindBy(id = "br.com.alura.aluraesporte:id/input_nome")
